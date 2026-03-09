@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nowruz Wiki 🌾
 
-## Getting Started
+An open-source, multi-lingual web application dedicated to the history, traditions, and celebrations of the Persian New Year.
 
-First, run the development server:
+![Nowruz Wiki](public/iran-flag.jpg) *(Lion and Sun Flag)*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Plan & Roadmap 🗺️
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Our goal is to build a beautiful, fast, and informative platform for people around the world to learn about Nowruz.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ✅ Phase 1 (Completed)
+- **Scaffolding & Architecture**: Initialize Next.js 16 App Router.
+- **Design System**: Establish a premium UI using Shadcn and Tailwind CSS V4, themed with the Nowruz palette (Green, Gold, Red, Cream). Build custom SVG React components for the Haft-sin items with Framer Motion animations.
+- **Internationalization (i18n)**: Implement a robust `next-intl` foundation. Set up the English (`en`) locale structure as the baseline.
+- **AI Accessibility**: Build a dedicated API route (`/api/content?page=[name]`) that outputs clean, semantic Markdown data for AI web scrapers.
+- **Production Build**: Fix all TypeScript strict type checks and ESLint warnings.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### ⏳ Phase 2 (Coming Soon)
+- **Content Expansion**: Write detailed markdown articles for the History, Traditions, and Sizdah Bedar pages.
+- **Multi-lingual Support**: Add Persian/Farsi (RTL) and other LTR languages (French, Spanish, Dutch) simply by extending the JSON dictionaries.
+- **Dynamic Content Management**: Consider migrating from static markdown strings to an integrated MDX system for richer content formatting.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack 🛠️
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router, Server Components)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Internationalization**: [next-intl](https://next-intl-docs.vercel.app/)
+- **Theming**: `next-themes` (Dark/Light mode support)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Getting Started 💻
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To run the project locally on your machine:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/thek1/nowruz.wiki.git
+   cd nowruz.wiki
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to explore the traditions.
+
+## Deployment 🚀
+
+This project is optimized for deployment on [Vercel](https://vercel.com/) with a custom domain managed by Cloudflare.
+
+1. Connect your GitHub repository to Vercel.
+2. Vercel will automatically detect the Next.js framework and handle the build process.
+3. Configure your Cloudflare DNS with the provided Vercel A/CNAME records.
+
+---
+*Built with ❤️ for the Nowruz community.*
