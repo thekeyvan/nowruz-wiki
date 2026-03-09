@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Noto_Sans } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 
 import { NextIntlClientProvider } from 'next-intl';
@@ -11,15 +11,15 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Analytics } from "@vercel/analytics/next";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
-const notoSans = Noto_Sans({
-  variable: "--font-noto-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
@@ -55,7 +55,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${notoSans.variable} antialiased min-h-screen bg-background font-sans`}
+        className={`${cormorant.variable} ${inter.variable} antialiased min-h-screen bg-background font-sans`}
       >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
