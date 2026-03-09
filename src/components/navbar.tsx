@@ -18,8 +18,8 @@ export function Navbar() {
         <Link href="/" className="mr-6 flex items-center space-x-2">
           {/* Lion and Sun Flag Placeholder - Since SVG is in public folder */}
           <Image src="/iran-flag.svg" alt="Lion and Sun Flag" width={48} height={24} className="h-8 w-auto rounded-sm" />
-          <span className="hidden font-bold sm:inline-block text-xl">
-            Nowruz<span className="text-secondary">.wiki</span>
+          <span className="hidden font-heading font-bold sm:inline-block text-2xl tracking-tight">
+            Nowruz<span className="text-gradient-nowruz">.wiki</span>
           </span>
         </Link>
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
