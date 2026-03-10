@@ -28,6 +28,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Nowruz Wiki - The Persian New Year",
   description: "Discover the beauty, history, and traditions of the Persian New Year through our open-source wiki.",
+  icons: {
+    icon: [
+      { url: '/haft-sin/fill/sonbol.png', type: 'image/png' },
+    ],
+    apple: '/haft-sin/fill/sonbol.png',
+  },
 };
 
 export default async function RootLayout({
