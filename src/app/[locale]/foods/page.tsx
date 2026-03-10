@@ -44,6 +44,8 @@ export default function FoodsPage() {
             headerLabel={t('label')}
             title={t('title')}
             subtitle={t('subtitle')}
+            heroImage="/images/page-headers/foods.png"
+            heroImageAlt="Traditional Sabzi Polo ba Mahi beautifully plated on a modern table"
         >
             {/* Main dishes */}
             {dishes.map((dish) => (
@@ -91,6 +93,50 @@ export default function FoodsPage() {
                             <p className="text-xs text-muted-foreground leading-relaxed">{sweet.desc}</p>
                         </div>
                     ))}
+                </div>
+            </ContentSection>
+
+            {/* Global Traditions */}
+            <ContentSection>
+                <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-6">
+                    Global Tastes of Nowruz
+                </h2>
+                <p className="text-[16px] leading-[1.8] text-muted-foreground mb-8">
+                    Because Nowruz is celebrated across many nations, the culinary traditions vary beautifully across borders. While the themes of spring, sweetness, and fertility remain constant, the dishes themselves tell the story of their local cultures.
+                </p>
+
+                <div className="space-y-6 max-w-2xl mx-auto">
+                    <div className="flex gap-4 items-start">
+                        <div className="w-12 h-12 shrink-0 rounded-full bg-orange-500/10 flex items-center justify-center text-2xl">🍯</div>
+                        <div>
+                            <h3 className="font-heading text-xl font-medium text-foreground mb-1">Samanu <span className="text-sm font-normal text-muted-foreground ml-2">Various Regions</span></h3>
+                            <p className="text-[15px] leading-[1.7] text-muted-foreground">A sweet, earthy pudding made entirely from germinated wheat. Across Iran, Afghanistan, Tajikistan, and Uzbekistan, cooking Samanu is a communal event. Women and girls gather to stir the massive pots overnight, singing memorable folk songs as they work.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex gap-4 items-start">
+                        <div className="w-12 h-12 shrink-0 rounded-full bg-blue-500/10 flex items-center justify-center text-2xl">🥜</div>
+                        <div>
+                            <h3 className="font-heading text-xl font-medium text-foreground mb-1">Haft Mewa <span className="text-sm font-normal text-muted-foreground ml-2">Afghanistan</span></h3>
+                            <p className="text-[15px] leading-[1.7] text-muted-foreground">Instead of the Haft-Seen table, many families in Afghanistan prepare <em>Haft Mewa</em> (Seven Fruits). It is a luxurious compote made of seven different dried fruits and nuts — like raisins, silver berries, pistachios, hazelnuts, prunes, walnuts, and almonds — served in a sweet syrup.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex gap-4 items-start">
+                        <div className="w-12 h-12 shrink-0 rounded-full bg-emerald-500/10 flex items-center justify-center text-2xl">🥛</div>
+                        <div>
+                            <h3 className="font-heading text-xl font-medium text-foreground mb-1">Nauryz Kozhe <span className="text-sm font-normal text-muted-foreground ml-2">Kazakhstan</span></h3>
+                            <p className="text-[15px] leading-[1.7] text-muted-foreground">In Kazakhstan, the new year begins by consuming <em>Nauryz kozhe</em>, a traditional, deeply nourishing drink typically made from seven ingredients including water, meat, salt, lipid, cereal, and kefir or milk, symbolizing joy, luck, and wisdom.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex gap-4 items-start">
+                        <div className="w-12 h-12 shrink-0 rounded-full bg-purple-500/10 flex items-center justify-center text-2xl">🥚</div>
+                        <div>
+                            <h3 className="font-heading text-xl font-medium text-foreground mb-1">Khoncha <span className="text-sm font-normal text-muted-foreground ml-2">Azerbaijan</span></h3>
+                            <p className="text-[15px] leading-[1.7] text-muted-foreground">The Azerbaijani Nowruz display centers around the <em>Khoncha</em>. This large silver or copper tray features green, sprouting wheat (samani) in the middle, surrounded by dyed eggs and at least seven colorful dishes and pastries.</p>
+                        </div>
+                    </div>
                 </div>
             </ContentSection>
         </ContentPage>
