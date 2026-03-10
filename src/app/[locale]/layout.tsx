@@ -9,11 +9,12 @@ import { routing } from '@/i18n/routing';
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { NowruzCountdownPill } from "@/components/nowruz-countdown-pill";
 import { Analytics } from "@vercel/analytics/next";
 import Script from 'next/script';
 
 const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+  variable: "--font-heading",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
@@ -75,6 +76,7 @@ export default async function RootLayout({
               <Navbar />
               <main className="flex-1">{children}</main>
               <Footer />
+              <NowruzCountdownPill />
             </div>
           </ThemeProvider>
         </NextIntlClientProvider>
