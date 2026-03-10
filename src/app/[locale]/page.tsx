@@ -215,7 +215,7 @@ export default function HomePage() {
                 custom={0} variants={fade}
                 className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8 font-medium"
               >
-                Nowruz 1404
+                Nowruz 1405
               </motion.p>
 
               <motion.h1

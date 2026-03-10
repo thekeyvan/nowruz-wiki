@@ -28,22 +28,36 @@ export default function SizdahBedarPage() {
                 </p>
             </ContentSection>
 
-            {/* Haji Firooz */}
+            {/* Heralds of Spring */}
             <ContentSection>
                 <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-6">
-                    Haji Firooz: The Herald of Spring
+                    Heralds of Spring
                 </h2>
                 <p className="text-[16px] leading-[1.8] text-muted-foreground mb-6">
-                    Roam the streets during this time, and you will encounter <em>Haji Firooz</em>. He is a traditional folklore character dressed in a bright red outfit with his face covered in soot.
-                </p>
-                <p className="text-[16px] leading-[1.8] text-muted-foreground mb-6">
-                    Armed with a tambourine, Haji Firooz dances through the streets, singing rhythmic and often comical songs to announce the arrival of spring and demand (in good fun) loose change from passersby.
+                    Roam the streets during this time across different countries, and you will encounter the traditional folklore characters who announce the arrival of Nowruz.
                 </p>
 
-                <div className="rounded-2xl bg-red-500/5 dark:bg-red-500/10 border border-red-500/10 p-6 md:p-8 my-8">
-                    <p className="text-[15px] leading-[1.8] text-muted-foreground">
-                        His black face and red clothes are thought by historians to represent an ancient deity of agriculture returning from the dark underworld into the bright spring.
-                    </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div className="rounded-2xl border p-6 bg-red-500/5 dark:bg-red-500/10 border-red-500/10">
+                        <h3 className="font-heading text-xl font-medium text-foreground mb-2">Haji Firooz &amp; Amu Nowruz</h3>
+                        <p className="text-[14px] leading-[1.6] text-muted-foreground">
+                            In Iran, <em>Haji Firooz</em> dances through the streets in bright red, his face covered in soot, playing a tambourine to spread joy. He is accompanied by <em>Amu Nowruz</em>, a silver-haired man who brings gifts to children — much like a Persian Santa Claus. Legend says Amu Nowruz can only meet his beloved wife, Nane Sarma (Mother Winter), once a year right before the spring begins.
+                        </p>
+                    </div>
+
+                    <div className="rounded-2xl border p-6 bg-blue-500/5 dark:bg-blue-500/10 border-blue-500/10">
+                        <h3 className="font-heading text-xl font-medium text-foreground mb-2">Kosa and Kechal</h3>
+                        <p className="text-[14px] leading-[1.6] text-muted-foreground">
+                            In Azerbaijan, the comedic duo <em>Kosa</em> and <em>Kechal</em> take the stage. Kosa, a skinny man with a fake beard, represents the fading winter. Kechal, a bald, mischievous man, symbolizes the approaching summer. They playfully fight in the streets, with Kechal ultimately winning, signifying spring&apos;s triumph over winter.
+                        </p>
+                    </div>
+
+                    <div className="rounded-2xl border p-6 bg-emerald-500/5 dark:bg-emerald-500/10 border-emerald-500/10 md:col-span-2">
+                        <h3 className="font-heading text-xl font-medium text-foreground mb-2">Kampirak</h3>
+                        <p className="text-[14px] leading-[1.6] text-muted-foreground">
+                            In the mountains of Afghanistan, <em>Kampirak</em> is the herald of spring. An old, bearded man wearing colorful clothes and a long hat, he and his retinue pass from village to village distributing charitable gifts. He symbolizes the beneficence and power of nature yielding the harsh forces of winter.
+                        </p>
+                    </div>
                 </div>
             </ContentSection>
 

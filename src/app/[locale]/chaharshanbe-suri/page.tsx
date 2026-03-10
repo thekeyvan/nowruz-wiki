@@ -61,6 +61,13 @@ export default function ChaharshanbesuriPage() {
                     In a ritual called <em>Qashogh Zani</em> (spoon banging), children — and often playful adults — drape themselves in long veils to hide their identities. They roam the neighborhood, banging spoons loudly against metal bowls or pots to ward off unlucky spirits, stopping at doors to receive nuts, chocolates, or cash from neighbors.
                 </p>
 
+                <h3 className="font-heading text-2xl font-medium tracking-tight text-foreground mt-8 mb-4">
+                    Boloni: Seeking the Future
+                </h3>
+                <p className="text-[16px] leading-[1.8] text-muted-foreground mb-6">
+                    Another beautiful evening tradition is <em>Boloni</em>, a playful fortune-telling ritual. Friends and family write classic Persian poems on slips of paper and drop them into a clay pot (the boloni), along with a small personal belonging like a ring or a coin. A young girl then reaches into the pot, pulls out a belonging, and recites the accompanying poem — revealing the owner&apos;s fortune for the coming year.
+                </p>
+
                 <div className="rounded-2xl bg-orange-500/5 dark:bg-orange-500/10 border border-orange-500/10 p-6 md:p-8 my-8">
                     <p className="text-[15px] leading-[1.8] text-muted-foreground">
                         Through water, soap, and fire, the slate is wiped clean. The people are now ready to welcome the exact moment of the new year.
