@@ -59,6 +59,44 @@ const haftSinItems = [
   },
 ];
 
+const funFacts = [
+  {
+    id: "origin",
+    title: "The Dawn of Spring",
+    desc: "Nowruz translates to 'New Day'. It occurs at the exact astronomical moment of the vernal equinox when day and night are of equal length.",
+    icon: "☀️",
+    className: "col-span-1 md:col-span-2 md:row-span-1 bg-gradient-to-br from-amber-500/10 to-orange-500/5 dark:from-amber-500/20 dark:to-orange-500/10"
+  },
+  {
+    id: "zoroastrian",
+    title: "Zoroastrian Roots",
+    desc: "Rooted in the ancient Persian religion, it symbolized the ultimate triumph of good over evil.",
+    icon: "🔥",
+    className: "col-span-1 md:col-span-1 md:row-span-2 bg-gradient-to-br from-stone-500/10 to-neutral-500/5 dark:from-stone-500/20 dark:to-neutral-500/10"
+  },
+  {
+    id: "global",
+    title: "Global Reach",
+    desc: "Over 300 million people celebrate worldwide. The UN officially recognizes March 21 as Nowruz.",
+    icon: "🌍",
+    className: "col-span-1 md:col-span-1 md:row-span-1 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 dark:from-blue-500/20 dark:to-cyan-500/10"
+  },
+  {
+    id: "jamshid",
+    title: "King Jamshid",
+    desc: "Mythology credits King Jamshid with creating Nowruz after flying in his jeweled chariot.",
+    icon: "👑",
+    className: "col-span-1 md:col-span-1 md:row-span-1 bg-gradient-to-br from-purple-500/10 to-fuchsia-500/5 dark:from-purple-500/20 dark:to-fuchsia-500/10"
+  },
+  {
+    id: "thirteen",
+    title: "13 Days of Joy",
+    desc: "The festival lasts 13 days, culminating in a nature picnic called 'Sizdah Bedar' to ward off bad luck.",
+    icon: "🌿",
+    className: "col-span-1 md:col-span-2 md:row-span-1 bg-gradient-to-br from-emerald-500/10 to-teal-500/5 dark:from-emerald-500/20 dark:to-teal-500/10"
+  }
+];
+
 const monuments = [
   { name: "Shahyad Tower", file: "Shahyad Tower" },
   { name: "Tomb of Hafez", file: "Tomb of Hafez" },
@@ -273,6 +311,58 @@ export default function HomePage() {
                 <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
                   <h3 className="font-sans text-xl md:text-2xl font-semibold text-white drop-shadow-md leading-tight tracking-tight">{item.nameEn}</h3>
                   <p className="text-xs md:text-sm text-white/80 mt-1 drop-shadow-sm">{item.name} · {item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── Did You Know? (Fun Facts) ─── */}
+      <section className="pb-24 md:pb-32 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <div className="mb-12">
+            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-medium">History & Trivia</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-semibold tracking-[-0.02em]">Did you know?</h2>
+          </div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-40px" }}
+            variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+            className="grid grid-cols-1 md:grid-cols-4 auto-rows-[auto] md:auto-rows-[220px] gap-5"
+          >
+            {funFacts.map((fact, i) => (
+              <motion.div
+                key={fact.id}
+                custom={i}
+                variants={{
+                  hidden: { opacity: 0, y: 30, filter: 'blur(10px)' },
+                  show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                }}
+                whileHover={{ scale: 1.02, y: -4, transition: { duration: 0.3, ease: "easeOut" } }}
+                className={`group relative rounded-[2rem] p-7 md:p-8 border border-white/40 dark:border-white/10 overflow-hidden cursor-default transition-all duration-500 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-white/10 backdrop-blur-md ${fact.className}`}
+              >
+                {/* Background ambient glow matching the icon */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-white/40 dark:bg-black/20" />
+
+                <div className="absolute top-0 right-0 -mt-2 -mr-4 text-8xl md:text-9xl opacity-[0.08] group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-700 ease-out pointer-events-none drop-shadow-sm">
+                  {fact.icon}
+                </div>
+
+                <div className="relative h-full flex flex-col justify-between z-10 gap-4">
+                  <span className="text-3xl lg:text-4xl block w-fit p-3 rounded-2xl bg-white/50 dark:bg-black/20 shadow-sm border border-white/40 dark:border-white/5 backdrop-blur-sm group-hover:scale-110 transition-transform duration-500 ease-out">
+                    {fact.icon}
+                  </span>
+                  <div className="mt-auto">
+                    <h3 className="font-sans text-xl md:text-2xl font-bold text-foreground tracking-tight mb-2 group-hover:text-primary transition-colors">
+                      {fact.title}
+                    </h3>
+                    <p className="font-sans text-[14px] leading-relaxed text-muted-foreground group-hover:text-foreground/80 transition-colors">
+                      {fact.desc}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}

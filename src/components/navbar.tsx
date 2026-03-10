@@ -20,7 +20,7 @@ export function Navbar() {
 
         {/* Nav links + theme */}
         <div className="flex items-center gap-8 text-sm font-medium text-muted-foreground">
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             <Link href="/" className="hover:text-foreground transition-colors duration-200">
               {t('home')}
             </Link>
@@ -29,6 +29,15 @@ export function Navbar() {
             </Link>
             <Link href="/haft-sin" className="hover:text-foreground transition-colors duration-200">
               {t('haft_sin')}
+            </Link>
+            <Link href="/chaharshanbe-suri" className="hover:text-foreground transition-colors duration-200">
+              {t('chaharshanbe_suri')}
+            </Link>
+            <Link href="/foods" className="hover:text-foreground transition-colors duration-200">
+              {t('foods')}
+            </Link>
+            <Link href="/science" className="hover:text-foreground transition-colors duration-200">
+              {t('science')}
             </Link>
             <Link href="/sizdah-bedar" className="hover:text-foreground transition-colors duration-200">
               {t('sizdah_bedar')}
