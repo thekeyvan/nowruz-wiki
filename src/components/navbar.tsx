@@ -5,49 +5,53 @@ import { Link } from '@/i18n/routing'
 import { useTranslations } from 'next-intl'
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
 
 export function Navbar() {
   const t = useTranslations('Navigation')
   const { setTheme, theme } = useTheme()
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center mx-auto px-4 md:px-8">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          {/* Lion and Sun Flag Placeholder - Since SVG is in public folder */}
-          <Image src="/iran-flag.svg" alt="Lion and Sun Flag" width={48} height={24} className="h-8 w-auto rounded-sm" />
-          <span className="hidden font-bold sm:inline-block text-xl">
-            Nowruz<span className="text-secondary">.wiki</span>
-          </span>
+    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-xl">
+      <div className="container flex h-16 items-center justify-between mx-auto px-6 md:px-12 max-w-6xl">
+        {/* Brand */}
+        <Link href="/" className="font-heading font-semibold text-2xl tracking-tight">
+          Nowruz<span className="text-primary">.wiki</span>
         </Link>
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-            <Link href="/" className="transition-colors hover:text-foreground/80 text-foreground">
+
+        {/* Nav links + theme */}
+        <div className="flex items-center gap-8 text-sm font-medium text-muted-foreground">
+          <nav className="hidden md:flex items-center gap-6">
+            <Link href="/" className="hover:text-foreground transition-colors duration-200">
               {t('home')}
             </Link>
-            <Link href="/history" className="transition-colors hover:text-foreground/80 text-foreground/60">
+            <Link href="/history" className="hover:text-foreground transition-colors duration-200">
               {t('history')}
             </Link>
-            <Link href="/haft-sin" className="transition-colors hover:text-foreground/80 text-foreground/60">
+            <Link href="/haft-sin" className="hover:text-foreground transition-colors duration-200">
               {t('haft_sin')}
             </Link>
-            <Link href="/sizdah-bedar" className="transition-colors hover:text-foreground/80 text-foreground/60">
+            <Link href="/chaharshanbe-suri" className="hover:text-foreground transition-colors duration-200">
+              {t('chaharshanbe_suri')}
+            </Link>
+            <Link href="/foods" className="hover:text-foreground transition-colors duration-200">
+              {t('foods')}
+            </Link>
+            <Link href="/science" className="hover:text-foreground transition-colors duration-200">
+              {t('science')}
+            </Link>
+            <Link href="/sizdah-bedar" className="hover:text-foreground transition-colors duration-200">
               {t('sizdah_bedar')}
             </Link>
           </nav>
-          <nav className="flex items-center pl-4 border-l border-border gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            >
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          </nav>
+
+          <button
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            className="relative p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-all duration-200"
+            aria-label="Toggle theme"
+          >
+            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute top-2 left-2 h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          </button>
         </div>
       </div>
     </header>

@@ -8,6 +8,34 @@
     "home": "Home",
     "history": "History",
     "haft_sin": "Haft-sin",
+    "chaharshanbe_suri": "Chaharshanbe Suri",
+    "foods": "Foods",
+    "science": "Science",
     "sizdah_bedar": "Sizdah Bedar"
+  },
+  "History": {
+    "label": "History & Origins",
+    "title": "The Ancient Roots of Nowruz",
+    "subtitle": "Trace the 3,000-year heritage of the Persian New Year — from Zoroastrian rituals to the myth of King Jamshid."
+  },
+  "ChaharshanbeS": {
+    "label": "Rituals & Preparation",
+    "title": "Chaharshanbe Suri",
+    "subtitle": "The Festival of Fire — from 'shaking the house' clean to leaping over roaring bonfires on the last Wednesday before the new year."
+  },
+  "Foods": {
+    "label": "Cuisine & Culture",
+    "title": "The Cuisine of Spring",
+    "subtitle": "Herbed rice, noodle stews, and mountains of sweets — the mouth-watering, deeply symbolic dishes that define Nowruz."
+  },
+  "Science": {
+    "label": "Astronomy & Timekeeping",
+    "title": "The Science of the Equinox",
+    "subtitle": "Why the Persian New Year starts at a different second every year — the fascinating astrophysics behind Nowruz."
+  },
+  "SizdahBedar": {
+    "label": "The 13th Day",
+    "title": "Sizdah Bedar",
+    "subtitle": "The 13-day marathon of celebration, ending with a massive, nationwide nature picnic to wash away bad luck."
   }
 }
