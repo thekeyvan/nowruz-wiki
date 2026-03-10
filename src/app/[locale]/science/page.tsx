@@ -11,6 +11,8 @@ export default function SciencePage() {
             headerLabel={t('label')}
             title={t('title')}
             subtitle={t('subtitle')}
+            heroImage="/images/page-headers/science.png"
+            heroImageAlt="Cinematic visualization of Earth perfectly illuminated during the Vernal Equinox"
         >
             {/* Vernal Equinox */}
             <ContentSection>

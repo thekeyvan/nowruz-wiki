@@ -44,6 +44,8 @@ export default function FoodsPage() {
             headerLabel={t('label')}
             title={t('title')}
             subtitle={t('subtitle')}
+            heroImage="/images/page-headers/foods.png"
+            heroImageAlt="Traditional Sabzi Polo ba Mahi beautifully plated on a modern table"
         >
             {/* Main dishes */}
             {dishes.map((dish) => (

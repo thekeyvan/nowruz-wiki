@@ -11,6 +11,8 @@ export default function ChaharshanbesuriPage() {
             headerLabel={t('label')}
             title={t('title')}
             subtitle={t('subtitle')}
+            heroImage="/images/page-headers/chaharshanbe.png"
+            heroImageAlt="People joyfully leaping over small bright bonfires at dusk"
         >
             {/* Khaneh Tekani */}
             <ContentSection>

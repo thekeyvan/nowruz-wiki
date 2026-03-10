@@ -11,6 +11,8 @@ export default function SizdahBedarPage() {
             headerLabel={t('label')}
             title={t('title')}
             subtitle={t('subtitle')}
+            heroImage="/images/page-headers/sizdah-bedar.png"
+            heroImageAlt="Families enjoying a massive spring picnic on a lush green park lawn"
         >
             {/* The 13 Days */}
             <ContentSection>

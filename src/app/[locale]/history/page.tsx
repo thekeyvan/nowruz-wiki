@@ -12,8 +12,8 @@ export default function HistoryPage() {
             headerLabel={t('label')}
             title={t('title')}
             subtitle={t('subtitle')}
-            heroImage="/images/haft-seen-vertical.jpg"
-            heroImageAlt="Ancient Persian traditions"
+            heroImage="/images/page-headers/history.png"
+            heroImageAlt="Ancient Persepolis ruins at sunset with majestic stone columns"
         >
             {/* Zoroastrian Heritage */}
             <ContentSection>
