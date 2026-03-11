@@ -49,7 +49,7 @@ export function Navbar() {
         
         {/* Left: Branding */}
         <div className="pointer-events-auto">
-          <Link href="/" className="flex items-center gap-3 shrink-0 group">
+          <Link href="/" className="flex items-center shrink-0 group">
             <Image 
               src="/iran-flag-circle.svg" 
               alt="Lion and Sun Emblem" 
@@ -57,9 +57,6 @@ export function Navbar() {
               height={32}
               className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300 rounded-full"
             />
-            <span className="font-heading font-semibold text-xl tracking-wide text-foreground drop-shadow-md">
-              Nowruz Wiki
-            </span>
           </Link>
         </div>
 
@@ -97,19 +94,18 @@ export function Navbar() {
             aria-modal="true"
             aria-label="Navigation menu"
           >
-             <div className="flex items-center justify-between mb-16 max-w-7xl mx-auto w-full">
-              <div className="flex items-center gap-3">
-                <Image src="/iran-flag-circle.svg" alt="Lion and Sun" width={32} height={32} className="rounded-full" />
-                <span className="font-heading font-semibold text-xl tracking-wide text-foreground">Nowruz Wiki</span>
+              <div className="flex items-center justify-between w-full">
+                <div className="flex items-center">
+                  <Image src="/iran-flag-circle.svg" alt="Lion and Sun" width={32} height={32} className="rounded-full" />
+                </div>
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground transition-colors"
+                  aria-label="Close menu"
+                >
+                  <X className="h-5 w-5" strokeWidth={2.5} />
+                </button>
               </div>
-              <button
-                onClick={() => setMobileOpen(false)}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="h-5 w-5" strokeWidth={2.5} />
-              </button>
-            </div>
 
             <nav className="flex flex-col max-w-2xl mx-auto w-full">
               {navLinks.map(({ key, href }, i) => (

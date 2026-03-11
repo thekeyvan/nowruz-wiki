@@ -23,7 +23,7 @@ export function getAllArticles(): ArticleMeta[] {
   if (!fs.existsSync(articlesDir)) return [];
   
   const categories = getCategories();
-  let articles: ArticleMeta[] = [];
+  const articles: ArticleMeta[] = [];
 
   categories.forEach(category => {
     const categoryDir = path.join(articlesDir, category);
