@@ -51,11 +51,11 @@ export function Navbar() {
         <div className="pointer-events-auto">
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
             <Image 
-              src="/iran-flag.svg" 
+              src="/iran-flag-circle.svg" 
               alt="Lion and Sun Emblem" 
               width={32} 
               height={32}
-              className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+              className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300 rounded-full"
             />
             <span className="font-heading font-semibold text-xl tracking-wide text-foreground drop-shadow-md">
               Nowruz Wiki
@@ -96,7 +96,7 @@ export function Navbar() {
           >
              <div className="flex items-center justify-between mb-16 max-w-7xl mx-auto w-full">
               <div className="flex items-center gap-3">
-                <Image src="/iran-flag.svg" alt="Lion and Sun" width={32} height={32} />
+                <Image src="/iran-flag-circle.svg" alt="Lion and Sun" width={32} height={32} className="rounded-full" />
                 <span className="font-heading font-semibold text-xl tracking-wide text-foreground">Nowruz Wiki</span>
               </div>
               <button

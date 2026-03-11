@@ -5,13 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CalendarPlus } from 'lucide-react';
 
 function getNextNowruz() {
-    const now = new Date();
-    const year = now.getFullYear();
-    let nowruz = new Date(year, 2, 20, 0, 0, 0);
-    if (now > nowruz) {
-        nowruz = new Date(year + 1, 2, 20, 0, 0, 0);
-    }
-    return nowruz;
+    // Exact moment of 2026 Nowruz: March 20, 2026, 3:46 PM CET = 14:46 UTC
+    return new Date("2026-03-20T14:46:00.000Z");
 }
 
 function getTimeLeft(target: Date) {
@@ -31,10 +26,18 @@ function getTimeLeft(target: Date) {
 function downloadICS() {
     const target = getNextNowruz();
     const y = target.getFullYear();
+    
+    // Format: YYYYMMDDTHHmmssZ
+    const startStr = target.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+    
+    // Set end time to 1 hour later for the calendar event duration
+    const end = new Date(target.getTime() + 60 * 60 * 1000);
+    const endStr = end.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+
     const ics = [
         'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Nowruz Wiki//EN',
         'BEGIN:VEVENT',
-        `DTSTART;VALUE=DATE:${y}0320`, `DTEND;VALUE=DATE:${y}0321`,
+        `DTSTART:${startStr}`, `DTEND:${endStr}`,
         'SUMMARY:Nowruz — Persian New Year',
         'DESCRIPTION:Happy Nowruz! The Persian New Year begins at the exact moment of the vernal equinox. Nowruz Mobarak! 🌸',
         `UID:nowruz-${y}@nowruz.wiki`,
@@ -48,12 +51,12 @@ function downloadICS() {
 }
 
 function getGoogleCalendarUrl(target: Date) {
-    const s = target.toISOString().replace(/-|:|\.\d\d\d/g, "");
-    const e = new Date(target); e.setDate(e.getDate() + 1);
-    const eStr = e.toISOString().replace(/-|:|\.\d\d\d/g, "");
+    const startStr = target.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+    const end = new Date(target.getTime() + 60 * 60 * 1000);
+    const endStr = end.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
     return `https://calendar.google.com/calendar/render?${new URLSearchParams({
         action: 'TEMPLATE', text: 'Nowruz — Persian New Year',
-        dates: `${s}/${eStr}`, details: 'Happy Nowruz! 🌸', location: 'Worldwide'
+        dates: `${startStr}/${endStr}`, details: 'Happy Nowruz! The Persian New Year begins at the exact moment of the vernal equinox. 🌸', location: 'Worldwide'
     })}`;
 }
 

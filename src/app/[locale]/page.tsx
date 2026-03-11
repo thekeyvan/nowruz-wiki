@@ -7,6 +7,8 @@ import { Link } from '@/i18n/routing';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { NowruzCountdown } from '@/components/nowruz-countdown';
+import { HafezOmen } from '@/components/hafez-omen';
+
 /* ── Seven S items for the vertical magazine scroll ── */
 const haftSinItems = [
   {
@@ -180,14 +182,14 @@ export default function HomePage() {
             {haftSinItems.map((item) => (
               <div 
                 key={item.name} 
-                className="relative w-[280px] md:w-[320px] lg:w-[360px] aspect-[4/5] md:aspect-[3/4] rounded-[24px] md:rounded-[32px] overflow-hidden shrink-0 group border border-black/5 dark:border-white/5 shadow-lg bg-black/5"
+                className="relative w-[200px] md:w-[220px] lg:w-[250px] aspect-[4/5] md:aspect-[3/4] rounded-[24px] md:rounded-[32px] overflow-hidden shrink-0 group border border-black/5 dark:border-white/5 shadow-lg bg-black/5"
               >
                 <Image
                   src={item.photo}
                   alt={item.nameEn}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  sizes="(max-width: 768px) 280px, 360px"
+                  sizes="(max-width: 768px) 200px, 250px"
                 />
                 
                 {/* Dark Vignette over image bottom */}
@@ -201,7 +203,7 @@ export default function HomePage() {
             ))}
             
             {/* CTA Card at the end */}
-            <div className="relative w-[280px] md:w-[320px] lg:w-[360px] aspect-[4/5] md:aspect-[3/4] rounded-[24px] md:rounded-[32px] overflow-hidden shrink-0 bg-primary/5 border border-primary/10 flex flex-col items-center justify-center p-8 text-center group cursor-pointer transition-colors hover:bg-primary/10">
+            <div className="relative w-[200px] md:w-[220px] lg:w-[250px] aspect-[4/5] md:aspect-[3/4] rounded-[24px] md:rounded-[32px] overflow-hidden shrink-0 bg-primary/5 border border-primary/10 flex flex-col items-center justify-center p-8 text-center group cursor-pointer transition-colors hover:bg-primary/10">
               <Link href="/haft-sin" className="absolute inset-0 z-10">
                 <span className="sr-only">See all items</span>
               </Link>
@@ -285,7 +287,7 @@ export default function HomePage() {
             <div className="lg:col-span-4 flex flex-col mt-4 lg:mt-0">
               {/* Header */}
               <div className="mb-6 md:mb-8 hidden lg:block">
-                <p className="text-sm tracking-[0.2em] font-bold uppercase text-foreground">Quote</p>
+                <p className="text-sm tracking-[0.2em] font-bold uppercase text-transparent select-none" aria-hidden="true">Spacer</p>
               </div>
               
               {/* Desktop Quote */}
@@ -326,6 +328,11 @@ export default function HomePage() {
             </p>
           </motion.blockquote>
         </div>
+      </section>
+
+      {/* ─── Hafez Omen Section ─── */}
+      <section className="px-6 md:px-12 pb-24 md:pb-32">
+        <HafezOmen />
       </section>
 
     </div>

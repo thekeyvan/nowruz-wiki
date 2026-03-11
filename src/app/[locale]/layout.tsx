@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   description: "Discover the beauty, history, and traditions of the Persian New Year through our open-source wiki.",
   icons: {
     icon: [
-      { url: '/haft-sin/fill/sonbol.png', type: 'image/png' },
+      { url: '/iran-flag-circle.png', type: 'image/png' },
     ],
-    apple: '/haft-sin/fill/sonbol.png',
+    apple: '/iran-flag-circle.png',
   },
 };
 
@@ -74,7 +74,7 @@ export default async function RootLayout({
           >
             <div className="relative flex min-h-screen flex-col">
               <Navbar />
-              <main className="flex-1">{children}</main>
+              <main className="flex-1 pb-32 md:pb-40">{children}</main>
               <Footer />
               <NowruzCountdownPill />
             </div>

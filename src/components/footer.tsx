@@ -1,29 +1,89 @@
-import { Link } from '@/i18n/routing'
-import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import { Github } from 'lucide-react';
 
 export function Footer() {
-  const t = useTranslations('Navigation')
+  const t = useTranslations('Navigation');
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/30">
-      <div className="container flex flex-col gap-4 md:flex-row items-center justify-between mx-auto px-6 md:px-12 py-8 max-w-6xl">
-        <p className="text-sm text-muted-foreground font-light">
-          Open source &amp; community driven — Nowruz 1405
-        </p>
-        <div className="flex items-center gap-8 text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-foreground transition-colors duration-200">
-            {t('home')}
-          </Link>
-          <a
-            href="https://github.com/thekeyvan/nowruz-wiki"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-foreground transition-colors duration-200"
-          >
-            GitHub
-          </a>
+    <footer className="w-full bg-[#FAFAFA] dark:bg-[#0A0A0A] border-t border-border/40 pb-20 md:pb-8 pt-16 md:pt-24 mt-auto">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-16 md:mb-24">
+          
+          {/* Brand & Description (Col 1-5) */}
+          <div className="md:col-span-5 flex flex-col items-start">
+            <Link href="/" className="inline-flex items-center gap-3 mb-6 transition-opacity hover:opacity-80">
+              <Image 
+                src="/iran-flag-circle.svg" 
+                alt="Iran Flag" 
+                width={28} 
+                height={28} 
+                className="drop-shadow-sm rounded-full"
+              />
+              <span className="font-heading text-2xl font-semibold tracking-tight text-foreground">
+                Nowruz Wiki
+              </span>
+            </Link>
+            <p className="text-muted-foreground leading-relaxed max-w-sm font-light text-[15px]">
+              Discovering the traditions, history, and timeless spirit of the Persian New Year. An open-source project dedicated to preserving and sharing our culture.
+            </p>
+          </div>
+
+          {/* Quick Links (Col 7-9) */}
+          <div className="md:col-span-3 md:col-start-7 flex flex-col">
+            <h4 className="font-heading text-lg font-medium mb-6 text-foreground tracking-wide">Explore</h4>
+            <nav className="flex flex-col gap-4">
+              <Link href="/" className="text-[15px] text-muted-foreground hover:text-primary transition-colors inline-block w-fit">
+                {t('home')}
+              </Link>
+              <Link href="#" className="text-[15px] text-muted-foreground hover:text-primary transition-colors inline-block w-fit">
+                Traditions <span className="text-[10px] ml-1 uppercase tracking-wider text-muted-foreground/50 border border-muted-foreground/20 px-1.5 py-0.5 rounded-sm">Soon</span>
+              </Link>
+              <Link href="#" className="text-[15px] text-muted-foreground hover:text-primary transition-colors inline-block w-fit">
+                History <span className="text-[10px] ml-1 uppercase tracking-wider text-muted-foreground/50 border border-muted-foreground/20 px-1.5 py-0.5 rounded-sm">Soon</span>
+              </Link>
+              <Link href="#" className="text-[15px] text-muted-foreground hover:text-primary transition-colors inline-block w-fit">
+                Food & Recipes <span className="text-[10px] ml-1 uppercase tracking-wider text-muted-foreground/50 border border-muted-foreground/20 px-1.5 py-0.5 rounded-sm">Soon</span>
+              </Link>
+            </nav>
+          </div>
+
+          {/* Contribute (Col 10-12) */}
+          <div className="md:col-span-3 flex flex-col">
+            <h4 className="font-heading text-lg font-medium mb-6 text-foreground tracking-wide">Contribute</h4>
+            <p className="text-[15px] text-muted-foreground leading-relaxed mb-6 font-light">
+              We need your help to grow this database. Contribute articles, photos, or code to make the wiki better for everyone.
+            </p>
+            <a
+              href="https://github.com/thekeyvan/nowruz-wiki"
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-2 bg-foreground/5 hover:bg-foreground/10 border border-border text-foreground px-5 py-2.5 rounded-full text-sm font-medium transition-all w-fit"
+            >
+              <Github className="w-5 h-5 text-foreground/80 group-hover:text-foreground transition-colors" />
+              <span>GitHub Repository</span>
+            </a>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border/40 gap-4">
+          <p className="text-[13px] text-muted-foreground font-light">
+            © {currentYear} Nowruz Wiki. Open source & community driven.
+          </p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="text-[13px] text-muted-foreground/80 hover:text-foreground transition-colors">
+              Privacy
+            </a>
+            <a href="#" className="text-[13px] text-muted-foreground/80 hover:text-foreground transition-colors">
+              Terms
+            </a>
+          </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
