@@ -15,13 +15,7 @@ export function Footer() {
           {/* Brand & Description (Col 1-5) */}
           <div className="md:col-span-5 flex flex-col items-start">
             <Link href="/" className="inline-flex items-center gap-3 mb-6 transition-opacity hover:opacity-80">
-              <Image 
-                src="/iran-flag-circle.svg" 
-                alt="Iran Flag" 
-                width={28} 
-                height={28} 
-                className="drop-shadow-sm rounded-full"
-              />
+              <span className="text-3xl drop-shadow-sm">🪻</span>
               <span className="font-heading text-2xl font-semibold tracking-tight text-foreground">
                 Nowruz Wiki
               </span>
