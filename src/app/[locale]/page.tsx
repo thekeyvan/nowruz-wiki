@@ -129,7 +129,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <h1 className="font-heading text-[5.5rem] md:text-[8.5rem] font-medium tracking-tight text-white leading-[0.9] mb-4 drop-shadow-lg">
-                Nowruz
+                Nowruz 2585
               </h1>
               <p className="text-lg md:text-xl text-white/90 max-w-sm font-medium drop-shadow-md">
                 Discovering the traditions and timeless spirit of the Persian New Year.

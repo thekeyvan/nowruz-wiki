@@ -16,6 +16,7 @@ const navLinks = [
   { key: 'foods', href: '/nowruz-foods' },
   { key: 'science', href: '/science' },
   { key: 'sizdah_bedar', href: '/sizdah-bedar' },
+  { key: 'shahanshahi_calendar', href: '/shahanshahi-calendar' },
 ] as const
 
 export function Navbar() {
@@ -63,6 +64,7 @@ export function Navbar() {
         {/* Right: Actions (Theme Toggle + Hamburger Menu only) */}
         <div className="flex items-center gap-4 pointer-events-auto">
           <button
+            type="button"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-foreground transition-all"
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -72,6 +74,7 @@ export function Navbar() {
           </button>
 
           <button
+            type="button"
             onClick={() => setMobileOpen(true)}
             className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-foreground transition-all"
             aria-label="Open menu"
@@ -99,6 +102,7 @@ export function Navbar() {
                   <Image src="/iran-flag-circle.svg" alt="Lion and Sun" width={32} height={32} className="rounded-full" />
                 </div>
                 <button
+                  type="button"
                   onClick={() => setMobileOpen(false)}
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-foreground/5 hover:bg-foreground/10 text-foreground transition-colors"
                   aria-label="Close menu"
