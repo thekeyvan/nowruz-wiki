@@ -64,7 +64,7 @@ const stories = [
   {
     title: "A Feast Worth Waiting For",
     teaser: "Herbed rice, noodle stews, and enough sweets to last 13 days.",
-    href: "/foods" as const,
+    href: "/nowruz-foods" as const,
     image: "/images/page-headers/foods.png",
   },
   {
