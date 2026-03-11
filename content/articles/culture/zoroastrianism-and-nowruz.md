@@ -5,7 +5,7 @@ description: >-
   historical roots are deeply embedded in Zoroastrianism, the ancient
   pre-Islamic rel...
 category: culture
-coverImage: /images/articles/zoroastrianism-and-nowruz.jpg
+coverImage: /images/articles/zoroastrianism-and-nowruz.png
 ---
 # Zoroastrianism and Nowruz
 

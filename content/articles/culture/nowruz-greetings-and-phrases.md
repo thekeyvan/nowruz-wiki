@@ -4,7 +4,7 @@ description: >-
   Because Nowruz is celebrated across so many different countries, languages,
   and dialects, there are dozens of ways to wish someone a happy new year.
 category: culture
-coverImage: /images/articles/nowruz-greetings-and-phrases.jpg
+coverImage: /images/articles/nowruz-greetings-and-phrases.png
 ---
 # Nowruz Greetings and Phrases
 

@@ -5,7 +5,7 @@ description: >-
   renewal of nature. While its origins lie in ancient Iranian and Zoroastrian
   tradition...
 category: culture
-coverImage: /images/articles/overview.jpg
+coverImage: /images/articles/overview.png
 ---
 # Nowruz
 

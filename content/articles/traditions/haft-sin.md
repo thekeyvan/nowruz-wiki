@@ -5,7 +5,7 @@ description: >-
   setting assembled during the Nowruz holiday. It is the visual and symbolic
   centerpie...
 category: traditions
-coverImage: /images/articles/haft-sin.jpg
+coverImage: /images/articles/haft-sin.png
 ---
 # Haft-Sin
 

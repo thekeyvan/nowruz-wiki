@@ -5,7 +5,7 @@ description: >-
   ultimate symbol of spring, rebirth, and the passing of time—has been a central
   theme for...
 category: culture
-coverImage: /images/articles/nowruz-in-poetry.jpg
+coverImage: /images/articles/nowruz-in-poetry.png
 ---
 # Nowruz in Poetry
 

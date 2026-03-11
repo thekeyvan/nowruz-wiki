@@ -4,7 +4,7 @@ description: >-
   In the weeks leading up to Nowruz, performers dressed as Haji Firooz appear in
   public squares, streets, and bazaars across Iran.
 category: folklore
-coverImage: /images/articles/haji-firuz.jpg
+coverImage: /images/articles/haji-firuz.png
 ---
 # Haji Firooz
 

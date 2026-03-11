@@ -5,7 +5,7 @@ description: >-
   outdoors." In Persian culture, as in many others, the number 13 is
   traditionally c...
 category: traditions
-coverImage: /images/articles/sizdah-bedar.jpg
+coverImage: /images/articles/sizdah-bedar.png
 ---
 # Sizdah Bedar
 

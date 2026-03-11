@@ -5,7 +5,7 @@ description: >-
   begins at the stroke of midnight, the Iranian New Year begins at the precise
   moment...
 category: traditions
-coverImage: /images/articles/tahvil-saal.jpg
+coverImage: /images/articles/tahvil-saal.png
 ---
 # Tahvil-e Saal
 

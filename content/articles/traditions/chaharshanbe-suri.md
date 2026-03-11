@@ -4,7 +4,7 @@ description: |-
   As they leap over the fire, they chant the traditional phrase:
   > "Zardi-ye man az toh, sorkhi-ye toh az man."
 category: traditions
-coverImage: /images/articles/chaharshanbe-suri.jpg
+coverImage: /images/articles/chaharshanbe-suri.png
 ---
 # Chaharshanbe Suri
 

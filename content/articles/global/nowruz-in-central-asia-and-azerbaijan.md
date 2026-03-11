@@ -5,7 +5,7 @@ description: >-
   public holiday and a deeply cherished cultural event across Central Asia
   (Tajikista...
 category: global
-coverImage: /images/articles/nowruz-in-central-asia-and-azerbaijan.jpg
+coverImage: /images/articles/nowruz-in-central-asia-and-azerbaijan.png
 ---
 # Nowruz in Central Asia and Azerbaijan
 

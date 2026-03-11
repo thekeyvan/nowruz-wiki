@@ -5,7 +5,7 @@ description: >-
   kind, elderly man who brings joy, gifts, and the promise of a new season to
   the people...
 category: folklore
-coverImage: /images/articles/amoo-nowruz.jpg
+coverImage: /images/articles/amoo-nowruz.png
 ---
 # Amoo Nowruz
 

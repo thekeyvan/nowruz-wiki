@@ -5,7 +5,7 @@ description: >-
   agriculture, and renewal. While it shares many historical roots with Iranian
   Nowruz, Afg...
 category: global
-coverImage: /images/articles/nowruz-in-afganestan.jpg
+coverImage: /images/articles/nowruz-in-afganestan.png
 ---
 # Nowruz in Afghanistan
 

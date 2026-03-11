@@ -5,7 +5,7 @@ description: >-
   then pan-fried until the skin is crispy, though it can also be baked or smoked
   (Mahi ...
 category: food
-coverImage: /images/articles/sabzi-polo-maahi.jpg
+coverImage: /images/articles/sabzi-polo-maahi.png
 ---
 # Sabzi Polo Ba Mahi
 

@@ -5,7 +5,7 @@ description: >-
   known as Did-o-Bazdid—is a daily occurrence. Every household must be prepared
   to h...
 category: food
-coverImage: /images/articles/traditional-nowruz-pastries.jpg
+coverImage: /images/articles/traditional-nowruz-pastries.png
 ---
 # Traditional Nowruz Pastries
 

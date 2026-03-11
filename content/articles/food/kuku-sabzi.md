@@ -7,7 +7,7 @@ description: |-
    Dill
    Chives or Scallions
 category: food
-coverImage: /images/articles/kuku-sabzi.jpg
+coverImage: /images/articles/kuku-sabzi.png
 ---
 # Kuku Sabzi
 

@@ -5,7 +5,7 @@ description: >-
   explained through her actions:
    When it snows, it is said that Naneh Sarma is shaking ou...
 category: folklore
-coverImage: /images/articles/nane-sarma.jpg
+coverImage: /images/articles/nane-sarma.png
 ---
 # Naneh Sarma
 

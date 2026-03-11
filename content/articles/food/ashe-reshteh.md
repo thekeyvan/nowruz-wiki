@@ -5,7 +5,7 @@ description: >-
   It is believed that by eating the noodles, you are metaphorically taking hold
   of ...
 category: food
-coverImage: /images/articles/ashe-reshteh.jpg
+coverImage: /images/articles/ashe-reshteh.png
 ---
 # Ash-e Reshteh
 

@@ -5,7 +5,7 @@ description: >-
   countries are flooded with people exchanging their old bills for stacks of
   brand-new,...
 category: traditions
-coverImage: /images/articles/eidi-new-year-gift.jpg
+coverImage: /images/articles/eidi-new-year-gift.png
 ---
 # Eidi (New Year's Gift)
 

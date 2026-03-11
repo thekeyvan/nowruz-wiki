@@ -5,7 +5,7 @@ description: >-
   profound cultural, historical, and political significance. For Kurds living
   across Iran,...
 category: global
-coverImage: /images/articles/nowruz-in-kurdestan.jpg
+coverImage: /images/articles/nowruz-in-kurdestan.png
 ---
 # Newroz in Kurdistan
 

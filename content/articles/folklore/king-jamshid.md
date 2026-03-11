@@ -5,7 +5,7 @@ description: >-
   the national epic of Greater Iran written by the poet Ferdowsi in the 10th
   century C...
 category: folklore
-coverImage: /images/articles/king-jamshid.jpg
+coverImage: /images/articles/king-jamshid.png
 ---
 # King Jamshid
 
