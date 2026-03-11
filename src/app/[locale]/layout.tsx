@@ -31,10 +31,8 @@ export const metadata: Metadata = {
   title: "Nowruz Wiki - The Persian New Year",
   description: "Discover the beauty, history, and traditions of the Persian New Year through our open-source wiki.",
   icons: {
-    icon: [
-      { url: '/iran-flag-circle.png', type: 'image/png' },
-    ],
-    apple: '/iran-flag-circle.png',
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪻</text></svg>",
+    apple: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪻</text></svg>",
   },
 };
 
