@@ -13,6 +13,7 @@ const staticPages = [
   '/nowruz-foods',
   '/science',
   '/sizdah-bedar',
+  '/shahanshahi-calendar',
   '/wiki',
 ];
 

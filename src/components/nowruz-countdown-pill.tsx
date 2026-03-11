@@ -26,7 +26,6 @@ function getTimeLeft(target: Date) {
 
 function downloadICS() {
     const target = getNextNowruz();
-    const y = target.getFullYear();
     
     // Format: YYYYMMDDTHHmmssZ
     const startStr = target.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
@@ -39,15 +38,15 @@ function downloadICS() {
         'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Nowruz Wiki//EN',
         'BEGIN:VEVENT',
         `DTSTART:${startStr}`, `DTEND:${endStr}`,
-        'SUMMARY:Nowruz — Persian New Year',
-        'DESCRIPTION:Happy Nowruz! The Persian New Year begins at the exact moment of the vernal equinox. Nowruz Mobarak! 🌸',
-        `UID:nowruz-${y}@nowruz.wiki`,
+        'SUMMARY:Nowruz 2585 — Persian New Year',
+        'DESCRIPTION:Happy Nowruz 2585! The Persian New Year begins at the exact moment of the vernal equinox. Nowruz Mobarak! 🌸',
+        `UID:nowruz-2585@nowruz.wiki`,
         'END:VEVENT', 'END:VCALENDAR',
     ].join('\r\n');
     const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url; a.download = `nowruz-${y}.ics`; a.click();
+    a.href = url; a.download = `nowruz-2585.ics`; a.click();
     URL.revokeObjectURL(url);
 }
 
@@ -56,8 +55,8 @@ function getGoogleCalendarUrl(target: Date) {
     const end = new Date(target.getTime() + 60 * 60 * 1000);
     const endStr = end.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
     return `https://calendar.google.com/calendar/render?${new URLSearchParams({
-        action: 'TEMPLATE', text: 'Nowruz — Persian New Year',
-        dates: `${startStr}/${endStr}`, details: 'Happy Nowruz! The Persian New Year begins at the exact moment of the vernal equinox. 🌸', location: 'Worldwide'
+        action: 'TEMPLATE', text: 'Nowruz 2585 — Persian New Year',
+        dates: `${startStr}/${endStr}`, details: 'Happy Nowruz 2585! The Persian New Year begins at the exact moment of the vernal equinox. 🌸', location: 'Worldwide'
     })}`;
 }
 
@@ -132,6 +131,7 @@ export function NowruzCountdownPill() {
                             {/* Calendar Button */}
                             <div className="relative">
                                 <button
+                                    type="button"
                                     onClick={(e) => { e.stopPropagation(); setMenuOpen(!menuOpen); }}
                                     className="w-10 h-10 md:w-11 md:h-11 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/25 text-white transition-all duration-300 ring-1 ring-white/10"
                                     aria-label="Add to Calendar"
@@ -142,7 +142,7 @@ export function NowruzCountdownPill() {
                                 <AnimatePresence>
                                     {menuOpen && (
                                         <>
-                                            <div className="fixed inset-0 z-40" onClick={() => setMenuOpen(false)} />
+                                            <div className="fixed inset-0 z-40" onClick={() => setMenuOpen(false)} onKeyDown={(e) => { if (e.key === 'Escape') setMenuOpen(false); }} role="button" tabIndex={0} aria-label="Close menu" />
                                             <motion.div
                                                 initial={{ opacity: 0, y: 10, scale: 0.95 }}
                                                 animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -150,7 +150,7 @@ export function NowruzCountdownPill() {
                                                 transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
                                                 className="absolute right-0 bottom-full mb-4 w-48 bg-[#2d2d2f]/95 dark:bg-[#1a1a1a]/95 backdrop-blur-3xl border border-white/10 rounded-[20px] shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden z-50 p-2"
                                             >
-                                                <button onClick={() => { downloadICS(); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-[13px] font-medium text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer mb-1 shadow-sm font-sans">
+                                                <button type="button" onClick={() => { downloadICS(); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-[13px] font-medium text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer mb-1 shadow-sm font-sans">
                                                     Apple Calendar
                                                 </button>
                                                 <a href={getGoogleCalendarUrl(getNextNowruz())} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="block w-full text-left px-4 py-3 text-[13px] font-medium text-white hover:bg-white/10 rounded-xl transition-colors cursor-pointer shadow-sm font-sans">
