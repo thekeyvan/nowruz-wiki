@@ -64,31 +64,31 @@ export async function generateMetadata({ params }: PageProps) {
 
 // Custom components to use inside MDX
 const components = {
-  h2: (props: any) => (
+  h2: (props: React.ComponentProps<'h2'>) => (
     <h2 className="font-heading text-3xl md:text-4xl font-semibold tracking-tight text-foreground mt-12 mb-6" {...props} />
   ),
-  h3: (props: any) => (
+  h3: (props: React.ComponentProps<'h3'>) => (
     <h3 className="font-heading text-2xl font-medium tracking-tight text-foreground mt-8 mb-4 border-b border-border/50 pb-2 inline-block" {...props} />
   ),
-  p: (props: any) => (
+  p: (props: React.ComponentProps<'p'>) => (
     <p className="text-[16.5px] leading-[1.8] text-muted-foreground mb-6" {...props} />
   ),
-  ul: (props: any) => (
+  ul: (props: React.ComponentProps<'ul'>) => (
     <ul className="space-y-3 my-6 pl-4 text-[16px] text-muted-foreground" {...props} />
   ),
-  li: (props: any) => (
+  li: (props: React.ComponentProps<'li'>) => (
     <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-1.5 before:h-1.5 before:rounded-full before:bg-rose-500/40" {...props} />
   ),
-  strong: (props: any) => (
+  strong: (props: React.ComponentProps<'strong'>) => (
     <strong className="font-semibold text-foreground" {...props} />
   ),
-  em: (props: any) => (
+  em: (props: React.ComponentProps<'em'>) => (
     <em className="italic text-foreground/80 font-serif" {...props} />
   ),
-  blockquote: (props: any) => (
+  blockquote: (props: React.ComponentProps<'blockquote'>) => (
     <blockquote className="border-l-2 border-rose-500/30 pl-6 py-2 my-8 italic text-lg text-muted-foreground/90 bg-rose-500/5 rounded-r-2xl" {...props} />
   ),
-  hr: (props: any) => (
+  hr: (props: React.ComponentProps<'hr'>) => (
     <hr className="my-12 border-border/40 border-t" {...props} />
   )
 };

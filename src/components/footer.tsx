@@ -1,10 +1,10 @@
 import { Link } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
+
 import Image from 'next/image';
 import { Github } from 'lucide-react';
 
 export function Footer() {
-  const t = useTranslations('Navigation');
+
   const currentYear = new Date().getFullYear();
 
   return (
