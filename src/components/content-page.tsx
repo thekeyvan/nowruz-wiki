@@ -4,7 +4,7 @@ import { motion, type Variants } from 'framer-motion';
 import Image from 'next/image';
 
 const fade: Variants = {
-    hidden: (i: number) => ({ opacity: 0, y: 30, filter: 'blur(8px)' }),
+    hidden: () => ({ opacity: 0, y: 30, filter: 'blur(8px)' }),
     show: (i: number) => ({
         opacity: 1, y: 0, filter: 'blur(0px)',
         transition: { duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }

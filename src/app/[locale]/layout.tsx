@@ -9,11 +9,12 @@ import { routing } from '@/i18n/routing';
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { NowruzCountdownPill } from "@/components/nowruz-countdown-pill";
 import { Analytics } from "@vercel/analytics/next";
 import Script from 'next/script';
 
 const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+  variable: "--font-heading",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
@@ -31,9 +32,9 @@ export const metadata: Metadata = {
   description: "Discover the beauty, history, and traditions of the Persian New Year through our open-source wiki.",
   icons: {
     icon: [
-      { url: '/haft-sin/fill/sonbol.png', type: 'image/png' },
+      { url: '/iran-flag-circle.png', type: 'image/png' },
     ],
-    apple: '/haft-sin/fill/sonbol.png',
+    apple: '/iran-flag-circle.png',
   },
 };
 
@@ -73,8 +74,9 @@ export default async function RootLayout({
           >
             <div className="relative flex min-h-screen flex-col">
               <Navbar />
-              <main className="flex-1">{children}</main>
+              <main className="flex-1 pb-32 md:pb-40">{children}</main>
               <Footer />
+              <NowruzCountdownPill />
             </div>
           </ThemeProvider>
         </NextIntlClientProvider>

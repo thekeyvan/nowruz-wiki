@@ -1,7 +1,6 @@
 "use client"
 
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 import { ContentPage, ContentSection, PersianQuote } from '@/components/content-page';
 
 export default function HistoryPage() {
