@@ -1,0 +1,61 @@
+# Nowruz Wiki — llms.txt
+# https://nowruz.wiki
+# A free, open-source encyclopedia about the Persian New Year (Nowruz).
+
+> Nowruz Wiki is an open-source project dedicated to preserving and sharing
+> the 3,000-year traditions of Nowruz — the Persian New Year celebrated by
+> over 300 million people worldwide. It covers history, rituals, foods,
+> folklore, science, and global celebrations.
+
+## Main Pages
+
+- Homepage: https://nowruz.wiki
+- History of Nowruz: https://nowruz.wiki/history
+- Haft-Seen Table: https://nowruz.wiki/haft-sin
+- Chaharshanbe Suri (Festival of Fire): https://nowruz.wiki/chaharshanbe-suri
+- Nowruz Foods: https://nowruz.wiki/nowruz-foods
+- The Science Behind Nowruz: https://nowruz.wiki/science
+- Sizdah Bedar (Day 13): https://nowruz.wiki/sizdah-bedar
+- Wiki Index: https://nowruz.wiki/wiki
+
+## Wiki Articles (Raw Markdown via API)
+
+### Culture
+- Overview: https://nowruz.wiki/api/content?page=overview
+- Nowruz Greetings and Phrases: https://nowruz.wiki/api/content?page=nowruz-greetings-and-phrases
+- Nowruz in Poetry: https://nowruz.wiki/api/content?page=nowruz-in-poetry
+- Zoroastrianism and Nowruz: https://nowruz.wiki/api/content?page=zoroastrianism-and-nowruz
+
+### Folklore
+- Amoo Nowruz: https://nowruz.wiki/api/content?page=amoo-nowruz
+- Haji Firooz: https://nowruz.wiki/api/content?page=haji-firuz
+- King Jamshid: https://nowruz.wiki/api/content?page=king-jamshid
+- Nane Sarma: https://nowruz.wiki/api/content?page=nane-sarma
+
+### Food
+- Ash-e Reshteh: https://nowruz.wiki/api/content?page=ashe-reshteh
+- Kuku Sabzi: https://nowruz.wiki/api/content?page=kuku-sabzi
+- Sabzi Polo ba Mahi: https://nowruz.wiki/api/content?page=sabzi-polo-maahi
+- Traditional Nowruz Pastries: https://nowruz.wiki/api/content?page=traditional-nowruz-pastries
+
+### Global
+- Nowruz in Afghanistan: https://nowruz.wiki/api/content?page=nowruz-in-afganestan
+- Nowruz in Central Asia & Azerbaijan: https://nowruz.wiki/api/content?page=nowruz-in-central-asia-and-azerbaijan
+- Nowruz in Kurdistan: https://nowruz.wiki/api/content?page=nowruz-in-kurdestan
+
+### Traditions
+- Chaharshanbe Suri: https://nowruz.wiki/api/content?page=chaharshanbe-suri
+- Eidi (New Year Gift): https://nowruz.wiki/api/content?page=eidi-new-year-gift
+- Haft-Sin: https://nowruz.wiki/api/content?page=haft-sin
+- Sizdah Bedar: https://nowruz.wiki/api/content?page=sizdah-bedar
+- Tahvil-e Saal: https://nowruz.wiki/api/content?page=tahvil-saal
+
+## API
+
+- Content API: https://nowruz.wiki/api/content
+  - GET /api/content → JSON index of all available articles
+  - GET /api/content?page={slug} → Raw markdown content of a specific article
+
+## Source Code
+
+- GitHub: https://github.com/thekeyvan/nowruz-wiki

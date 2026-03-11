@@ -13,7 +13,7 @@ const navLinks = [
   { key: 'history', href: '/history' },
   { key: 'haft_sin', href: '/haft-sin' },
   { key: 'chaharshanbe_suri', href: '/chaharshanbe-suri' },
-  { key: 'foods', href: '/foods' },
+  { key: 'foods', href: '/nowruz-foods' },
   { key: 'science', href: '/science' },
   { key: 'sizdah_bedar', href: '/sizdah-bedar' },
 ] as const
@@ -47,7 +47,7 @@ export function Navbar() {
       */}
       <header className="absolute top-0 left-0 right-0 z-50 pt-6 px-6 md:px-12 flex items-center justify-between pointer-events-none select-none max-w-7xl mx-auto w-full">
         
-        {/* Left: Branding with iran-flag.svg */}
+        {/* Left: Branding */}
         <div className="pointer-events-auto">
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
             <Image 
@@ -68,7 +68,7 @@ export function Navbar() {
           <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 text-foreground transition-all"
-            aria-label="Toggle theme"
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
           >
             <Sun className="h-[18px] w-[18px] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" strokeWidth={2} />
             <Moon className="absolute h-[18px] w-[18px] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" strokeWidth={2} />
@@ -93,6 +93,9 @@ export function Navbar() {
             exit={{ opacity: 0, transition: { duration: 0.2 } }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-[16px] md:inset-[32px] z-[60] bg-background/95 backdrop-blur-3xl rounded-[32px] flex flex-col pt-6 px-6 md:px-12 pb-12 overflow-hidden shadow-2xl overflow-y-auto border border-border/10"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
           >
              <div className="flex items-center justify-between mb-16 max-w-7xl mx-auto w-full">
               <div className="flex items-center gap-3">

@@ -11,6 +11,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { NowruzCountdownPill } from "@/components/nowruz-countdown-pill";
 import { Analytics } from "@vercel/analytics/next";
+import { JsonLd } from "@/components/json-ld";
 import Script from 'next/script';
 
 const cormorant = Cormorant_Garamond({
@@ -31,10 +32,8 @@ export const metadata: Metadata = {
   title: "Nowruz Wiki - The Persian New Year",
   description: "Discover the beauty, history, and traditions of the Persian New Year through our open-source wiki.",
   icons: {
-    icon: [
-      { url: '/iran-flag-circle.png', type: 'image/png' },
-    ],
-    apple: '/iran-flag-circle.png',
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪻</text></svg>",
+    apple: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪻</text></svg>",
   },
 };
 
@@ -73,11 +72,36 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <div className="relative flex min-h-screen flex-col">
+              {/* Skip to content — accessibility */}
+              <a
+                href="#main-content"
+                className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-foreground focus:text-background focus:rounded-lg focus:text-sm focus:font-medium"
+              >
+                Skip to content
+              </a>
               <Navbar />
-              <main className="flex-1 pb-32 md:pb-40">{children}</main>
+              <main id="main-content" className="flex-1 pb-32 md:pb-40">{children}</main>
               <Footer />
               <NowruzCountdownPill />
             </div>
+
+            {/* WebSite + Organization JSON-LD */}
+            <JsonLd data={{
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Nowruz Wiki',
+              url: 'https://nowruz.wiki',
+              description: 'A free, open-source encyclopedia about the Persian New Year (Nowruz). Discover the beauty, history, and traditions celebrated by over 300 million people.',
+              publisher: {
+                '@type': 'Organization',
+                name: 'Nowruz Wiki',
+                url: 'https://nowruz.wiki',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://nowruz.wiki/iran-flag-circle.svg',
+                },
+              },
+            }} />
           </ThemeProvider>
         </NextIntlClientProvider>
         <Analytics />

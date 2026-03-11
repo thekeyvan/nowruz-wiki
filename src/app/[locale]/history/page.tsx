@@ -1,10 +1,41 @@
-"use client"
-
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { ContentPage, ContentSection, PersianQuote } from '@/components/content-page';
+import type { Metadata } from 'next';
 
-export default function HistoryPage() {
-    const t = useTranslations('History');
+const BASE_URL = 'https://nowruz.wiki';
+
+interface PageProps {
+    params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'History' });
+    return {
+        title: `${t('title')} | Nowruz Wiki`,
+        description: t('subtitle'),
+        keywords: ['Nowruz history', 'Zoroastrianism', 'King Jamshid', 'Persepolis', 'Persian New Year', 'Achaemenid Empire', 'Cyrus the Great'],
+        alternates: { canonical: `${BASE_URL}/history` },
+        openGraph: {
+            title: `${t('title')} | Nowruz Wiki`,
+            description: t('subtitle'),
+            url: `${BASE_URL}/history`,
+            siteName: 'Nowruz Wiki',
+            images: [{ url: `${BASE_URL}/images/page-headers/history.png`, width: 1200, height: 630 }],
+            type: 'article',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${t('title')} | Nowruz Wiki`,
+            description: t('subtitle'),
+            images: [`${BASE_URL}/images/page-headers/history.png`],
+        },
+    };
+}
+
+export default async function HistoryPage({ params }: PageProps) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'History' });
 
     return (
         <ContentPage

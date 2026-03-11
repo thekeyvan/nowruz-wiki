@@ -1,43 +1,78 @@
-"use client"
-
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { ContentPage, ContentSection } from '@/components/content-page';
+import { Link } from '@/i18n/routing';
+import type { Metadata } from 'next';
 
-export default function FoodsPage() {
-    const t = useTranslations('Foods');
+const BASE_URL = 'https://nowruz.wiki';
 
-    const dishes = [
-        {
-            name: "Sabzi Polo ba Mahi",
-            subtitle: "Herbed Rice with White Fish",
-            emoji: "🐟",
-            description: "This is the undisputed king of the Nowruz Eve dinner table. Long-grain basmati rice is mixed with a fragrant mountain of finely chopped fresh herbs — dill, cilantro, parsley, and garlic chives — then steamed to fluffy perfection.",
-            symbolism: "The deep, vibrant green of the rice symbolizes reborn nature, growth, and the arrival of spring. The fish represents life, fluidity, and moving forward.",
-            color: "bg-emerald-500/5 dark:bg-emerald-500/10 border-emerald-500/10"
+interface PageProps {
+    params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Foods' });
+    return {
+        title: `${t('title')} | Nowruz Wiki`,
+        description: t('subtitle'),
+        keywords: ['Nowruz food', 'Sabzi Polo', 'Ash-e Reshteh', 'Kuku Sabzi', 'Persian cuisine', 'Nowruz recipes', 'Persian sweets'],
+        alternates: { canonical: `${BASE_URL}/nowruz-foods` },
+        openGraph: {
+            title: `${t('title')} | Nowruz Wiki`,
+            description: t('subtitle'),
+            url: `${BASE_URL}/nowruz-foods`,
+            siteName: 'Nowruz Wiki',
+            images: [{ url: `${BASE_URL}/images/page-headers/foods.png`, width: 1200, height: 630 }],
+            type: 'article',
         },
-        {
-            name: "Ash-e Reshteh",
-            subtitle: "Persian Noodle Stew",
-            emoji: "🍜",
-            description: "A thick, rich, herbaceous stew containing beans, lentils, chickpeas, spinach, and topped with caramelized onions, fried mint garlic oil, and kashk (tangy fermented whey).",
-            symbolism: "The tangled noodles represent life's knotted problems. Eating them 'untangles' the difficulties of the coming year, giving clarity and a straight path forward.",
-            color: "bg-amber-500/5 dark:bg-amber-500/10 border-amber-500/10"
+        twitter: {
+            card: 'summary_large_image',
+            title: `${t('title')} | Nowruz Wiki`,
+            description: t('subtitle'),
+            images: [`${BASE_URL}/images/page-headers/foods.png`],
         },
-        {
-            name: "Kuku Sabzi",
-            subtitle: "Fresh Herb Frittata",
-            emoji: "🌿",
-            description: "Imagine a frittata that is entirely herbs held together by a whisper of egg. Packed with parsley, cilantro, dill, and scallions, often studded with chopped walnuts and tart dried barberries.",
-            symbolism: "The profound green color celebrates spring foliage, fertility, and abundance.",
-            color: "bg-green-500/5 dark:bg-green-500/10 border-green-500/10"
-        }
-    ];
+    };
+}
 
-    const sweets = [
-        { name: "Naan-e Nokhodchi", desc: "Tiny, clover-shaped cookies made from roasted chickpea flour and cardamom. They melt on your tongue without chewing.", emoji: "🍪" },
-        { name: "Baklava", desc: "Flaky pastry filled with chopped nuts, drenched in rosewater and cardamom syrup.", emoji: "🥮" },
-        { name: "Sohan", desc: "A rich, brittle toffee from the city of Qom, heavily spiced with saffron and loaded with pistachios.", emoji: "🍬" },
-    ];
+const dishes = [
+    {
+        name: "Sabzi Polo ba Mahi",
+        slug: "sabzi-polo-maahi",
+        subtitle: "Herbed Rice with White Fish",
+        emoji: "🐟",
+        description: "This is the undisputed king of the Nowruz Eve dinner table. Long-grain basmati rice is mixed with a fragrant mountain of finely chopped fresh herbs — dill, cilantro, parsley, and garlic chives — then steamed to fluffy perfection.",
+        symbolism: "The deep, vibrant green of the rice symbolizes reborn nature, growth, and the arrival of spring. The fish represents life, fluidity, and moving forward.",
+        color: "bg-emerald-500/5 dark:bg-emerald-500/10 border-emerald-500/10"
+    },
+    {
+        name: "Ash-e Reshteh",
+        slug: "ashe-reshteh",
+        subtitle: "Persian Noodle Stew",
+        emoji: "🍜",
+        description: "A thick, rich, herbaceous stew containing beans, lentils, chickpeas, spinach, and topped with caramelized onions, fried mint garlic oil, and kashk (tangy fermented whey).",
+        symbolism: "The tangled noodles represent life's knotted problems. Eating them 'untangles' the difficulties of the coming year, giving clarity and a straight path forward.",
+        color: "bg-amber-500/5 dark:bg-amber-500/10 border-amber-500/10"
+    },
+    {
+        name: "Kuku Sabzi",
+        slug: "kuku-sabzi",
+        subtitle: "Fresh Herb Frittata",
+        emoji: "🌿",
+        description: "Imagine a frittata that is entirely herbs held together by a whisper of egg. Packed with parsley, cilantro, dill, and scallions, often studded with chopped walnuts and tart dried barberries.",
+        symbolism: "The profound green color celebrates spring foliage, fertility, and abundance.",
+        color: "bg-green-500/5 dark:bg-green-500/10 border-green-500/10"
+    }
+];
+
+const sweets = [
+    { name: "Naan-e Nokhodchi", desc: "Tiny, clover-shaped cookies made from roasted chickpea flour and cardamom. They melt on your tongue without chewing.", emoji: "🍪" },
+    { name: "Baklava", desc: "Flaky pastry filled with chopped nuts, drenched in rosewater and cardamom syrup.", emoji: "🥮" },
+    { name: "Sohan", desc: "A rich, brittle toffee from the city of Qom, heavily spiced with saffron and loaded with pistachios.", emoji: "🍬" },
+];
+
+export default async function FoodsPage({ params }: PageProps) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Foods' });
 
     return (
         <ContentPage
@@ -66,9 +101,15 @@ export default function FoodsPage() {
 
                     <div className={`rounded-2xl border p-6 md:p-8 ${dish.color}`}>
                         <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2 font-medium">Symbolism</p>
-                        <p className="text-[15px] leading-[1.8] text-muted-foreground">
+                        <p className="text-[15px] leading-[1.8] text-muted-foreground mb-4">
                             {dish.symbolism}
                         </p>
+                        <Link href={`/${dish.slug}`} className="inline-flex items-center text-sm font-medium text-foreground hover:text-rose-500 transition-colors group">
+                            Read recipe &amp; history 
+                            <svg className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </Link>
                     </div>
                 </ContentSection>
             ))}
@@ -93,6 +134,14 @@ export default function FoodsPage() {
                             <p className="text-xs text-muted-foreground leading-relaxed">{sweet.desc}</p>
                         </div>
                     ))}
+                </div>
+                <div className="flex justify-center mt-8">
+                    <Link href="/traditional-nowruz-pastries" className="inline-flex items-center px-6 py-3 rounded-xl bg-foreground text-background hover:bg-foreground/90 font-medium transition-colors group">
+                        Read more about Nowruz Pastries
+                        <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </Link>
                 </div>
             </ContentSection>
 

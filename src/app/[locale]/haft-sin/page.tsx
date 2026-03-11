@@ -1,5 +1,29 @@
 import { ContentPage, ContentSection } from '@/components/content-page';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+const BASE_URL = 'https://nowruz.wiki';
+
+export const metadata: Metadata = {
+    title: 'Haft-Seen Table | Nowruz Wiki',
+    description: 'Every item on the Haft-Seen table tells a story. Here\'s the full meaning behind each one — and why it\'s been there for thousands of years.',
+    keywords: ['Haft-Seen', 'Haft-Sin', 'seven S items', 'Nowruz table', 'Sabzeh', 'Samanoo', 'Persian New Year traditions'],
+    alternates: { canonical: `${BASE_URL}/haft-sin` },
+    openGraph: {
+        title: 'Haft-Seen Table | Nowruz Wiki',
+        description: 'Every item on the Haft-Seen table tells a story. Here\'s the full meaning behind each one.',
+        url: `${BASE_URL}/haft-sin`,
+        siteName: 'Nowruz Wiki',
+        images: [{ url: `${BASE_URL}/images/haft-seen-vertical.jpg`, width: 1200, height: 630 }],
+        type: 'article',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Haft-Seen Table | Nowruz Wiki',
+        description: 'Every item on the Haft-Seen table tells a story. Here\'s the full meaning behind each one.',
+        images: [`${BASE_URL}/images/haft-seen-vertical.jpg`],
+    },
+};
 
 const items = [
     {

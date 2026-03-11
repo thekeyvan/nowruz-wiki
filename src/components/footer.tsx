@@ -34,20 +34,13 @@ export function Footer() {
           {/* Quick Links (Col 7-9) */}
           <div className="md:col-span-3 md:col-start-7 flex flex-col">
             <h4 className="font-heading text-lg font-medium mb-6 text-foreground tracking-wide">Explore</h4>
-            <nav className="flex flex-col gap-4">
-              <Link href="/" className="text-[15px] text-muted-foreground hover:text-primary transition-colors inline-block w-fit">
-                {t('home')}
-              </Link>
-              <Link href="#" className="text-[15px] text-muted-foreground hover:text-primary transition-colors inline-block w-fit">
-                Traditions <span className="text-[10px] ml-1 uppercase tracking-wider text-muted-foreground/50 border border-muted-foreground/20 px-1.5 py-0.5 rounded-sm">Soon</span>
-              </Link>
-              <Link href="#" className="text-[15px] text-muted-foreground hover:text-primary transition-colors inline-block w-fit">
-                History <span className="text-[10px] ml-1 uppercase tracking-wider text-muted-foreground/50 border border-muted-foreground/20 px-1.5 py-0.5 rounded-sm">Soon</span>
-              </Link>
-              <Link href="#" className="text-[15px] text-muted-foreground hover:text-primary transition-colors inline-block w-fit">
-                Food & Recipes <span className="text-[10px] ml-1 uppercase tracking-wider text-muted-foreground/50 border border-muted-foreground/20 px-1.5 py-0.5 rounded-sm">Soon</span>
-              </Link>
-            </nav>
+              <ul className="space-y-3">
+                <li><Link href="/" className="text-[15px] text-muted-foreground hover:text-foreground transition-colors">Home</Link></li>
+                <li><Link href="/haft-sin" className="text-[15px] text-muted-foreground hover:text-foreground transition-colors">The Haft-Sin</Link></li>
+                <li><Link href="/history" className="text-[15px] text-muted-foreground hover:text-foreground transition-colors">History</Link></li>
+                <li><Link href="/nowruz-foods" className="text-[15px] text-muted-foreground hover:text-foreground transition-colors">Foods</Link></li>
+                <li><Link href="/wiki" className="text-[15px] text-rose-500/80 hover:text-rose-500 transition-colors">Wiki Index</Link></li>
+              </ul>
           </div>
 
           {/* Contribute (Col 10-12) */}

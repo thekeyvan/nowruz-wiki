@@ -1,10 +1,41 @@
-"use client"
-
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { ContentPage, ContentSection, PersianQuote } from '@/components/content-page';
+import type { Metadata } from 'next';
 
-export default function ChaharshanbesuriPage() {
-    const t = useTranslations('ChaharshanbeS');
+const BASE_URL = 'https://nowruz.wiki';
+
+interface PageProps {
+    params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'ChaharshanbeS' });
+    return {
+        title: `${t('title')} | Nowruz Wiki`,
+        description: t('subtitle'),
+        keywords: ['Chaharshanbe Suri', 'Festival of Fire', 'Persian fire festival', 'Nowruz traditions', 'Khaneh Tekani', 'Qashogh Zani'],
+        alternates: { canonical: `${BASE_URL}/chaharshanbe-suri` },
+        openGraph: {
+            title: `${t('title')} | Nowruz Wiki`,
+            description: t('subtitle'),
+            url: `${BASE_URL}/chaharshanbe-suri`,
+            siteName: 'Nowruz Wiki',
+            images: [{ url: `${BASE_URL}/images/page-headers/chaharshanbe.png`, width: 1200, height: 630 }],
+            type: 'article',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${t('title')} | Nowruz Wiki`,
+            description: t('subtitle'),
+            images: [`${BASE_URL}/images/page-headers/chaharshanbe.png`],
+        },
+    };
+}
+
+export default async function ChaharshanbesuriPage({ params }: PageProps) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'ChaharshanbeS' });
 
     return (
         <ContentPage

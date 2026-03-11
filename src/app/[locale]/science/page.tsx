@@ -1,10 +1,41 @@
-"use client"
-
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { ContentPage, ContentSection } from '@/components/content-page';
+import type { Metadata } from 'next';
 
-export default function SciencePage() {
-    const t = useTranslations('Science');
+const BASE_URL = 'https://nowruz.wiki';
+
+interface PageProps {
+    params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Science' });
+    return {
+        title: `${t('title')} | Nowruz Wiki`,
+        description: t('subtitle'),
+        keywords: ['Vernal Equinox', 'Solar Hijri calendar', 'Jalali calendar', 'astronomy', 'Nowruz science', 'spring equinox'],
+        alternates: { canonical: `${BASE_URL}/science` },
+        openGraph: {
+            title: `${t('title')} | Nowruz Wiki`,
+            description: t('subtitle'),
+            url: `${BASE_URL}/science`,
+            siteName: 'Nowruz Wiki',
+            images: [{ url: `${BASE_URL}/images/page-headers/science.png`, width: 1200, height: 630 }],
+            type: 'article',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${t('title')} | Nowruz Wiki`,
+            description: t('subtitle'),
+            images: [`${BASE_URL}/images/page-headers/science.png`],
+        },
+    };
+}
+
+export default async function SciencePage({ params }: PageProps) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'Science' });
 
     return (
         <ContentPage
