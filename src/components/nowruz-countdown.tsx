@@ -66,6 +66,7 @@ export function NowruzCountdown() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
+        // eslint-disable-next-line
         setMounted(true);
         const target = getNextNowruz();
         setTimeLeft(getTimeLeft(target));

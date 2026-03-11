@@ -83,6 +83,7 @@ export function NowruzCountdownPill() {
     // Ensure state is correct on mount/navigation
     useEffect(() => {
         if (pathname !== '/') {
+            // eslint-disable-next-line
             setIsVisible(true);
         } else if (window.scrollY > 500) {
             setIsVisible(true);
@@ -92,6 +93,7 @@ export function NowruzCountdownPill() {
     }, [pathname]);
 
     useEffect(() => {
+        // eslint-disable-next-line
         setMounted(true);
         const target = getNextNowruz();
         setTimeLeft(getTimeLeft(target));

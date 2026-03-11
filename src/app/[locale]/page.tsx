@@ -1,8 +1,7 @@
 "use client"
 
 import { useRef, useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
-import { motion, type Variants, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from '@/i18n/routing';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -82,17 +81,7 @@ const stories = [
   },
 ];
 
-const fade: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.05, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
-  }),
-};
-
 export default function HomePage() {
-  const t = useTranslations('Index');
 
   const targetRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);

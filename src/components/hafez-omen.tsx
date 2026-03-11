@@ -187,11 +187,11 @@ export function HafezOmen() {
               className="flex flex-col items-center w-full"
             >
               <div className="relative mb-8 md:mb-12">
-                <span className="absolute -top-6 -left-6 text-6xl text-white/5 font-serif select-none">"</span>
+                <span className="absolute -top-6 -left-6 text-6xl text-white/5 font-serif select-none">&quot;</span>
                 <p className="font-heading text-2xl md:text-3xl lg:text-4xl text-[#F2F2F2] leading-[1.4] md:leading-[1.5] italic text-center drop-shadow-sm font-medium">
                   {omen?.english}
                 </p>
-                <span className="absolute -bottom-10 -right-6 text-6xl text-white/5 font-serif select-none rotate-180">"</span>
+                <span className="absolute -bottom-10 -right-6 text-6xl text-white/5 font-serif select-none rotate-180">&quot;</span>
               </div>
               
               <div className="w-12 h-[1px] bg-white/20 mb-8 md:mb-10" />

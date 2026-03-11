@@ -1,5 +1,4 @@
 import { ContentPage, ContentSection } from '@/components/content-page';
-import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const items = [
@@ -66,7 +65,6 @@ const items = [
 ];
 
 export default function HaftSinPage() {
-    const t = useTranslations('Navigation');
 
     return (
         <ContentPage
