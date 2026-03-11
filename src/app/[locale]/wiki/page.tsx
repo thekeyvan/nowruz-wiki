@@ -2,12 +2,31 @@ import { getAllArticles } from '@/lib/mdx';
 import { getTranslations } from 'next-intl/server';
 import { ContentPage, ContentSection } from '@/components/content-page';
 import { Link } from '@/i18n/routing';
+import type { Metadata } from 'next';
 
-export async function generateMetadata() {
+const BASE_URL = 'https://nowruz.wiki';
+
+export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Wiki');
   return {
     title: `${t('title')} | Nowruz Wiki`,
     description: t('description'),
+    keywords: ['Nowruz wiki', 'Persian New Year articles', 'Nowruz traditions', 'Persian culture', 'Nowruz encyclopedia'],
+    alternates: { canonical: `${BASE_URL}/wiki` },
+    openGraph: {
+      title: `${t('title')} | Nowruz Wiki`,
+      description: t('description'),
+      url: `${BASE_URL}/wiki`,
+      siteName: 'Nowruz Wiki',
+      images: [{ url: `${BASE_URL}/images/page-headers/history.png`, width: 1200, height: 630 }],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t('title')} | Nowruz Wiki`,
+      description: t('description'),
+      images: [`${BASE_URL}/images/page-headers/history.png`],
+    },
   };
 }
 
@@ -64,7 +83,7 @@ export default async function WikiIndexPage() {
                           </p>
                           <div className="flex items-center text-xs font-medium text-rose-500/80 group-hover:text-rose-500 transition-colors">
                             Read Article 
-                            <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                           </div>

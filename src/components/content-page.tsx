@@ -31,7 +31,7 @@ export function ContentPage({
     return (
         <>
             {/* Hero */}
-            <section className="relative overflow-hidden">
+            <section className="relative overflow-hidden" aria-label="Page hero">
                 <div className="container mx-auto px-6 md:px-12 pt-24 pb-16 md:pt-36 md:pb-24 max-w-4xl">
                     <motion.div
                         initial="hidden"

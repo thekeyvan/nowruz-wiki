@@ -2,9 +2,10 @@ import { getArticleBySlug, getAllArticles } from '@/lib/mdx';
 import { notFound } from 'next/navigation';
 import { redirect, routing } from '@/i18n/routing';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { getTranslations } from 'next-intl/server';
 import { ContentPage, ContentSection } from '@/components/content-page';
-import Image from 'next/image';
+import { JsonLd } from '@/components/json-ld';
+
+const BASE_URL = 'https://nowruz.wiki';
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -35,10 +36,29 @@ export async function generateMetadata({ params }: PageProps) {
   const article = getArticleBySlug(slug);
   
   if (!article) return {};
+
+  const imageUrl = article.meta.coverImage
+    ? `${BASE_URL}${article.meta.coverImage}`
+    : `${BASE_URL}/images/page-headers/history.png`;
   
   return {
     title: `${article.meta.title} | Nowruz Wiki`,
     description: article.meta.description,
+    alternates: { canonical: `${BASE_URL}/${slug}` },
+    openGraph: {
+      title: `${article.meta.title} | Nowruz Wiki`,
+      description: article.meta.description,
+      url: `${BASE_URL}/${slug}`,
+      siteName: 'Nowruz Wiki',
+      images: [{ url: imageUrl, width: 1200, height: 630 }],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${article.meta.title} | Nowruz Wiki`,
+      description: article.meta.description,
+      images: [imageUrl],
+    },
   };
 }
 
@@ -80,8 +100,6 @@ export default async function WikiArticlePage({ params }: PageProps) {
   if (slug === 'haft-sin') redirect({ href: '/haft-sin', locale });
   if (slug === 'chaharshanbe-suri') redirect({ href: '/', locale });
 
-  const t = await getTranslations('Navigation');
-  
   const article = getArticleBySlug(slug);
   
   if (!article) {
@@ -93,19 +111,36 @@ export default async function WikiArticlePage({ params }: PageProps) {
   // Format category string (e.g. 'traditions' -> 'Traditions')
   const formattedCategory = meta.category.charAt(0).toUpperCase() + meta.category.slice(1);
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: meta.title,
+    description: meta.description,
+    image: meta.coverImage ? `${BASE_URL}${meta.coverImage}` : undefined,
+    url: `${BASE_URL}/${slug}`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Nowruz Wiki',
+      url: BASE_URL,
+    },
+  };
+
   return (
-    <ContentPage
-      headerLabel={`Wiki / ${formattedCategory}`}
-      title={meta.title}
-      subtitle={meta.description}
-      heroImage={meta.coverImage}
-      heroImageAlt={meta.title}
-    >
-      <ContentSection className="w-full">
-        <div className="prose prose-lg dark:prose-invert prose-headings:font-heading prose-a:text-rose-500 hover:prose-a:text-rose-600 max-w-none w-full xl:w-[85%] mx-auto pb-20">
-          <MDXRemote source={content} components={components} />
-        </div>
-      </ContentSection>
-    </ContentPage>
+    <>
+      <JsonLd data={articleJsonLd} />
+      <ContentPage
+        headerLabel={`Wiki / ${formattedCategory}`}
+        title={meta.title}
+        subtitle={meta.description}
+        heroImage={meta.coverImage}
+        heroImageAlt={meta.title}
+      >
+        <ContentSection className="w-full">
+          <div className="prose prose-lg dark:prose-invert prose-headings:font-heading prose-a:text-rose-500 hover:prose-a:text-rose-600 max-w-none w-full xl:w-[85%] mx-auto pb-20">
+            <MDXRemote source={content} components={components} />
+          </div>
+        </ContentSection>
+      </ContentPage>
+    </>
   );
 }
