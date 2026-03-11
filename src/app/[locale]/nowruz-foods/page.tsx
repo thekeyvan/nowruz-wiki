@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { ContentPage, ContentSection } from '@/components/content-page';
+import { Link } from '@/i18n/routing';
 
 export default function FoodsPage() {
     const t = useTranslations('Foods');
@@ -9,6 +10,7 @@ export default function FoodsPage() {
     const dishes = [
         {
             name: "Sabzi Polo ba Mahi",
+            slug: "sabzi-polo-maahi",
             subtitle: "Herbed Rice with White Fish",
             emoji: "🐟",
             description: "This is the undisputed king of the Nowruz Eve dinner table. Long-grain basmati rice is mixed with a fragrant mountain of finely chopped fresh herbs — dill, cilantro, parsley, and garlic chives — then steamed to fluffy perfection.",
@@ -17,6 +19,7 @@ export default function FoodsPage() {
         },
         {
             name: "Ash-e Reshteh",
+            slug: "ashe-reshteh",
             subtitle: "Persian Noodle Stew",
             emoji: "🍜",
             description: "A thick, rich, herbaceous stew containing beans, lentils, chickpeas, spinach, and topped with caramelized onions, fried mint garlic oil, and kashk (tangy fermented whey).",
@@ -25,6 +28,7 @@ export default function FoodsPage() {
         },
         {
             name: "Kuku Sabzi",
+            slug: "kuku-sabzi",
             subtitle: "Fresh Herb Frittata",
             emoji: "🌿",
             description: "Imagine a frittata that is entirely herbs held together by a whisper of egg. Packed with parsley, cilantro, dill, and scallions, often studded with chopped walnuts and tart dried barberries.",
@@ -66,9 +70,15 @@ export default function FoodsPage() {
 
                     <div className={`rounded-2xl border p-6 md:p-8 ${dish.color}`}>
                         <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2 font-medium">Symbolism</p>
-                        <p className="text-[15px] leading-[1.8] text-muted-foreground">
+                        <p className="text-[15px] leading-[1.8] text-muted-foreground mb-4">
                             {dish.symbolism}
                         </p>
+                        <Link href={`/${dish.slug}`} className="inline-flex items-center text-sm font-medium text-foreground hover:text-rose-500 transition-colors group">
+                            Read recipe & history 
+                            <svg className="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </Link>
                     </div>
                 </ContentSection>
             ))}
@@ -93,6 +103,14 @@ export default function FoodsPage() {
                             <p className="text-xs text-muted-foreground leading-relaxed">{sweet.desc}</p>
                         </div>
                     ))}
+                </div>
+                <div className="flex justify-center mt-8">
+                    <Link href="/traditional-nowruz-pastries" className="inline-flex items-center px-6 py-3 rounded-xl bg-foreground text-background hover:bg-foreground/90 font-medium transition-colors group">
+                        Read more about Nowruz Pastries
+                        <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </Link>
                 </div>
             </ContentSection>
 

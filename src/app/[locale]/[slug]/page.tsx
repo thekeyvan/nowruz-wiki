@@ -79,9 +79,6 @@ export default async function WikiArticlePage({ params }: PageProps) {
   // Handle overlapping custom pages by redirecting to their hard-coded highly styled routes
   if (slug === 'haft-sin') redirect({ href: '/haft-sin', locale });
   if (slug === 'chaharshanbe-suri') redirect({ href: '/', locale });
-  if (['ashe-reshteh', 'kuku-sabzi', 'sabzi-polo-maahi', 'traditional-nowruz-pastries'].includes(slug)) {
-    redirect({ href: '/foods', locale });
-  }
 
   const t = await getTranslations('Navigation');
   
