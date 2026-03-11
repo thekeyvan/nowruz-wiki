@@ -1,5 +1,6 @@
 import { getArticleBySlug, getAllArticles } from '@/lib/mdx';
-import { notFound, redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
+import { redirect, routing } from '@/i18n/routing';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getTranslations } from 'next-intl/server';
 import { ContentPage, ContentSection } from '@/components/content-page';
@@ -12,8 +13,8 @@ interface PageProps {
 export async function generateStaticParams() {
   const articles = getAllArticles();
   
-  // We need to generate paths for all supported locales
-  const locales = ['en', 'fa'];
+  // We need to generate paths for all supported locales dynamically from our config
+  const locales = routing.locales;
   
   const params: { locale: string; slug: string }[] = [];
   
@@ -73,13 +74,13 @@ const components = {
 };
 
 export default async function WikiArticlePage({ params }: PageProps) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   
   // Handle overlapping custom pages by redirecting to their hard-coded highly styled routes
-  if (slug === 'haft-sin') redirect('/haft-sin');
-  if (slug === 'chaharshanbe-suri') redirect('/');
+  if (slug === 'haft-sin') redirect({ href: '/haft-sin', locale });
+  if (slug === 'chaharshanbe-suri') redirect({ href: '/', locale });
   if (['ashe-reshteh', 'kuku-sabzi', 'sabzi-polo-maahi', 'traditional-nowruz-pastries'].includes(slug)) {
-    redirect('/foods');
+    redirect({ href: '/foods', locale });
   }
 
   const t = await getTranslations('Navigation');

@@ -1,7 +1,7 @@
 import { getAllArticles } from '@/lib/mdx';
 import { getTranslations } from 'next-intl/server';
 import { ContentPage, ContentSection } from '@/components/content-page';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 export async function generateMetadata() {
   const t = await getTranslations('Wiki');
@@ -53,7 +53,7 @@ export default async function WikiIndexPage() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {articles.map((article) => (
-                    <Link href={`/wiki/${article.slug}`} key={article.slug} className="group block h-full">
+                    <Link href={`/${article.slug}`} key={article.slug} className="group block h-full">
                       <div className="rounded-3xl border border-border/40 bg-card overflow-hidden h-full flex flex-col transition-all duration-300 hover:border-border hover:shadow-lg dark:hover:shadow-rose-900/5 group-hover:-translate-y-1">
                         <div className="p-6 md:p-8 flex flex-col h-full bg-gradient-to-b from-transparent to-muted/20">
                           <h3 className="font-sans text-xl font-semibold mb-3 tracking-tight group-hover:text-rose-500 transition-colors">
